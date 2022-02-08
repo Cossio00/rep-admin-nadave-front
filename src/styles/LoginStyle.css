@@ -1,0 +1,15 @@
+.loginPage{
+    background-color: aqua;
+    width: 100vw;
+    height: 100vh;
+    display:grid;
+    grid-template-columns: 58vw 42vw;
+}
+
+.loginPage .img-Bckgd{
+    background-color: gray;
+}
+
+.loginPage .container-login{
+    background-color: #DDDDDD;
+}
