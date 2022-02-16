@@ -2,12 +2,14 @@ import React from "react";
 import '../styles/LoginStyle.css';
 import imgBandeira from '../assets/images/imgBandeira.JPG';
 import logoRep from '../assets/images/logoRep.png';
+import HomePage from "./HomePage";
+import { NavLink } from "react-router-dom";
 
 function LoginPage(){
     return(
         <>
         <title>Login</title>
-        <header className = "loginPage">
+        <body className = "loginPage">
             <div className = "container-img">
                 <img src={imgBandeira} className = "img-background"></img>
             </div>
@@ -21,7 +23,7 @@ function LoginPage(){
                 </form>
                 <h3 href="#esqueci-a-senha">Esqueci minha senha</h3>
             </div>
-        </header>
+        </body>
         </>
     )
 }

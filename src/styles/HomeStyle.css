@@ -1,0 +1,36 @@
+.homePage{
+    background-color: rgba(0, 0, 0, 0.85);
+    width: 100vw;
+    height: 100vh;
+    display:grid;
+    grid-template-columns: 8vw 92vw;
+}
+
+.homePage .title-welcome{
+    color:rgba(1000, 1000, 1000, 100);
+}
+.homePage .container-atalho{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.homePage .container-atalho div{
+    background-color: #C4C4C4;
+    width: 300px;
+    height:180px;
+    display: grid;
+    justify-self: center;
+    justify-items: center;
+    border-radius: 10px;
+}
+
+.container-atalho img{
+    width: 100px;
+    height:100px;
+    padding-top: 20px;
+}
+
+.container-atalho span{
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
