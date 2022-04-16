@@ -49,6 +49,13 @@
     border: 1px black solid;
 }
 
+.input-login :last-child{
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    
+}
+
 .input-login button{
     width: 120px;
     height: 40px;

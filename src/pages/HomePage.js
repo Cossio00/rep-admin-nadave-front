@@ -11,8 +11,8 @@ return(
     
     <body className="homePage">
         <Navbar/>
-        <div>
-            <h1 className="title-welcome">Bem-vindo, Tijolinho</h1>
+        <div className="homePage-body">
+            <h1 className="title-welcome">Seja bem-vindo, Tijolinho!</h1>
             <div className="container-atalho">
                 <div id="box-usuarios">
                     <img src={userIcon}></img>

@@ -2,10 +2,13 @@ import React from "react";
 import '../styles/LoginStyle.css';
 import imgBandeira from '../assets/images/imgBandeira.JPG';
 import logoRep from '../assets/images/logoRep.png';
-import HomePage from "./HomePage";
+import HomePage from './HomePage';
 import { NavLink } from "react-router-dom";
 
 function LoginPage(){
+
+    //const history = Navigate();
+
     return(
         <>
         <title>Login</title>
@@ -19,9 +22,9 @@ function LoginPage(){
                 <form className="input-login">
                     <input name="usuario" placeholder="Usuário"></input>                
                     <input name="senha" placeholder="Senha"></input>
-                    <button name="entrar">Entrar</button>
+                    <NavLink to='/home'><button name="entrar" >Entrar</button></NavLink>
                 </form>
-                <h3 href="#esqueci-a-senha">Esqueci minha senha</h3>
+                <h3>Esqueci minha senha</h3>
             </div>
         </body>
         </>
