@@ -3,5 +3,34 @@
     width: 100vw;
     height: 100vh;
     display:grid;
-    grid-template-columns: 6vw 94vw;
+    grid-template-columns: 5vw 95vw;
+}
+
+.caixinhaPage-body{
+    height: 100%;
+    display:grid;
+    grid-template-rows: 1fr 1fr 3fr;
+    padding-left: 70px;
+}
+
+
+.caixinhaPage-body h1{
+    color:rgba(1000, 1000, 1000, 100);
+}
+
+#select-moradores {
+    width: 20vw;
+}
+/*
+tr{
+    margin-left:300px;
+}
+*/
+
+td{
+    color:aliceblue;
+    border: solid 1px;
+    border-color: aliceblue;
+    padding: 20px;
+    width: 15vw;
 }

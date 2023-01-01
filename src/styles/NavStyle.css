@@ -1,6 +1,6 @@
 .navbar{
     background-color: #dddddd;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: block;
     justify-items: center;
@@ -20,8 +20,8 @@
 }
 
 .navbar img{
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
     cursor: pointer;
     display: grid;
     align-self: center;
@@ -29,7 +29,7 @@
 }
 
 .sandwich img{
-    height: 50px;
-    width: 50px;
+    height: 35px;
+    width: 35px;
 
 }

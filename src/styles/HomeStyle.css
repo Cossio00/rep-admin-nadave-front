@@ -3,7 +3,7 @@
     width: 100vw;
     height: 100vh;
     display:grid;
-    grid-template-columns: 6vw 94vw;
+    grid-template-columns: 5vw 95vw;
 }
 
 .homePage-body{
@@ -21,8 +21,8 @@
 
 .homePage .container-atalho div{
     background-color: #C4C4C4;
-    width: 20vw;
-    height:12vw;
+    width: 15vw;
+    height:9vw;
     display: grid;
     justify-self: center;
     justify-items: center;
@@ -30,12 +30,12 @@
 }
 
 .container-atalho img{
-    width: 100px;
-    height:100px;
-    padding-top: 20px;
+    width: 75px;
+    height:75px;
+    padding-top: 15px;
 }
 
 .container-atalho span{
-    font-size: 25px;
+    font-size: 18px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

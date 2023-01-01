@@ -30,7 +30,7 @@ function Navbar(){
                 </NavLink>
             </div>
             <div>
-                <NavLink to='/home'>
+                <NavLink to='/usuarios'>
                     <img src={userIcon}/>
                 </NavLink>
             </div>

@@ -1,27 +1,82 @@
 import Navbar from "../assets/components/Navbar";
 import '../styles/CaixinhaStyle.css';
 import Select from 'react-select';
-
+import api from '../services/api';
+import { useEffect, useState } from "react";
 
 function CaixinhaPage(){
 
-    const moradoresEBixos = [
-        { value: 'caixinha', label: 'Caixinha' },
-        { value: 'lakraya', label: 'Lakraya' },
-        { value: '7x1', label: '7x1' },
-        { value: 'serumanin', label: 'Serumanin' },
-        { value: 'tropeço', label: 'Tropeço' },
-        { value: 'tijolinho', label: 'Tijolinho' },
-        { value: 'diva-h', label: 'Diva-h' },
-        { value: 'bixo blutufi', label: 'Bixo Blutufi' },
-        { value: 'bixo robert', label: 'Bixo Robert' },
-        { value: 'bixo daniel', label: 'Bixo Daniel' },
-        { value: 'bixo andre', label: 'Bixo Andre' },
-        { value: 'bixo draco', label: 'Bixo Draco'}
-      ]
+    const [moradores, setMoradores] = useState();
+    const [apelidos, setApelidos] = useState();
+    const [operations, setOperations] = useState();
+    const [idMoradorSelecionado, setMoradorSelecionado] = useState(1);
 
+
+    function changeMorador(event){
+        console.log(event)
+        setMoradorSelecionado(event.id)
+    }
+
+    const loadMoradores = async() => await api.get('users')
+        .then(response => {
+            setMoradores(response.data)
+            let apelidoMorador = response.data.map(function(apelido){
+                let apelidoData = {id: apelido['userid'], value: apelido['username'], label: apelido['usernickname']}
+                return apelidoData
+            })
+            setApelidos(apelidoMorador)
+        })
+        .catch(err => console.log(err))
     
+    const loadOperations = async() =>
+        await api.get(`operations/${idMoradorSelecionado}`)
+        .then(response =>{
+            setOperations(response.data)
+        })
+        .catch(err => console.log(err))
+    
+        
+    useEffect(() =>{
+        loadOperations();
+    }, [idMoradorSelecionado]);
 
+    useEffect(() =>{
+        loadMoradores();
+    },[]);
+
+    const tabelaVazia = (
+        <><tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </>
+    )
 
     return(
         <>
@@ -31,7 +86,24 @@ function CaixinhaPage(){
             <Navbar/>
             <div className="caixinhaPage-body">
                 <h1>Caixinha</h1>
-                <Select options={moradoresEBixos} />
+                <Select id="select-moradores" options={apelidos} onChange={changeMorador}/>
+                <tbody>
+                        <thead>
+                            <td>Descrição</td>
+                            <td>Data</td>
+                            <td>Valor</td>
+                            <td>Saldo</td>
+                        </thead>
+                    <div className="table-operations">{operations === undefined ? tabelaVazia : operations.map( p =>(
+                        <tr>
+                            <td>{p['operationdescription']}</td>
+                            <td>{p['operationdate']}</td>
+                            <td>{p['operationvalue']}</td>
+                            <td>{p['operationfinalbalance']}</td>
+                        </tr>
+                    ))}
+                    </div>
+                </tbody>
             </div>
         </body>
         </>
